@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tentang Saya</title>
     <style>
+            body.gelap {
+        background-color: #1e1e1e;
+        color: #eee;
+      }
       body {
         font-family: Arial, sans-  serif;
         max-width: 600px;
@@ -27,7 +31,10 @@
   </head>
   <body>
     <img src="dandy%202.jpg" alt="Foto saya">
-    <h1>Halo, saya Dandy Bagaskara</h1>
+    <h1>
+          <p id="Holaaaa"></p>
+    <button onclick="gantiTema()">Ganti tema</button>
+      Halo, saya Dandy Bagaskara</h1>
     <p>Saya dulu waktu SMA pengen banget jadi anak kuliahan di juruan IT, tapi ternyata hasil SNMPTN berkata lain</p>
 
     <h2>Yang lagi saya pelajari</h2>
@@ -39,5 +46,25 @@
 
     <h2>Kontak</h2>
     <p><a href="https://github.com/DaKira14">Profil GitHub saya</a></p>
+        <script>
+      const jam = new Date().getHours();
+      let sapaan;
+
+      if (jam < 11) {
+        sapaan = "Selamat pagi!";
+      } else if (jam < 15) {
+        sapaan = "Selamat siang!";
+      } else if (jam < 18) {
+        sapaan = "Selamat sore!";
+      } else {
+        sapaan = "Selamat malam!";
+      }
+
+      document.getElementById("sapaan").textContent = sapaan + " Terima kasih sudah mampir.";
+
+      function gantiTema() {
+        document.body.classList.toggle("gelap");
+      }
+    </script>
   </body>
 </html>
